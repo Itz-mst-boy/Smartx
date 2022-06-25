@@ -118,7 +118,9 @@ async def nsfw_scan_command(_, message):
     m = await message.reply_text("`ᴡᴀɪᴛ ᴀ sᴇᴄ. ʙᴀʙʏ .`")
     file_id = await get_file_id_from_message(reply)
     if not file_id:
-        return await m.edit("`ᴇʀʀᴏʀ ʀᴇᴘᴏʀᴛ ᴏɴ @worldwide_friend_zone../nᴜsᴇ /bug ᴇʀʀᴏʀ ɴᴀᴍᴇ")
+        return await m.edit(
+            "`ᴇʀʀᴏʀ ʀᴇᴘᴏʀᴛ ᴏɴ @worldwide_friend_zone../nᴜsᴇ /bug ᴇʀʀᴏʀ ɴᴀᴍᴇ"
+        )
     file = await pbot.download_media(file_id)
     try:
         results = await arq.nsfw_scan(file=file)
